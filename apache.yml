@@ -1,1 +1,14 @@
 
+---
+ - hosts: webserver
+   become: True
+   tasks:
+     - name: Install pckgs
+       apt:
+          name: "apche" 
+          state: :present"
+          
+      - name: start apache
+        service:
+           name: apache
+           state: restart
