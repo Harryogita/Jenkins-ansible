@@ -1,6 +1,5 @@
-
 ---
- - hosts: webserver
+ - hosts: webservers
    become: True
    tasks:
      - name: Install pckgs
@@ -8,7 +7,7 @@
           name: "apche" 
           state: :present"
           
-      - name: start apache
-        service:
-           name: apache
-           state: restart
+     - name: start apache
+       service:
+          name: apache
+          state: restart
