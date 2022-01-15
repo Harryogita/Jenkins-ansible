@@ -1,13 +1,19 @@
 ---
  - hosts: webservers
-   become: True
+  # become: True
+   remote_user: harry
    tasks:
      - name: Install pckgs
        apt:
-          name: "apche" 
+          name: "vim" 
           state: :present"
           
-     - name: start apache
-       service:
-          name: apache
-          state: restart
+  #   - name: start apache
+  #     service:
+   #       name: apache
+    #      state: restart
+     - name: run date command
+          command: uptime
+          register: dateval
+     - debug:
+          var: dateval
