@@ -1,6 +1,6 @@
 ---
- - hosts: 192.168.137.129
-   remote_user: harry
+ - hosts: 192.168.137.130
+   remote_user: root
    become: true
    tasks:
      
@@ -9,6 +9,12 @@
        register: dateval
      - debug:
           var: dateval
+
+     - name: Install vim on ubuntu remote host
+       apt: name="figlet"  state=latest
+       register: vimvar
+     - debug:
+          var: vimvar
 
      - name: Install vim on ubuntu remote host
        apt: name="figlet"  state=latest
