@@ -9,11 +9,7 @@
      - debug:
           var: dateval
 
-     - name: Install vim on ubuntu remote host
-       apt: name="figlet"  state=latest
-       register: vimvar
-     - debug:
-          var: vimvar
+    
 
      - name: Install docker on ubuntu remote server
        apt: name=docker state=present
