@@ -10,7 +10,7 @@
           var: dateval
 
      - name: Install figlet on ubuntu remote host
-       yum: name="python"  state=latest
+       yum: name="vim"  state=latest
        register: vimvar
      - debug:
           var: vimvar
