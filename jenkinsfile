@@ -10,8 +10,7 @@ pipeline {
             stage('ansible') {
              steps {
                   echo 'running ansible playbook from jenkinsfile'
-                  ansiblePlaybook credentialsId: 'gitkey', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inv.yml', playbook: 'apache.yml'
-                   }
+                       ansiblePlaybook credentialsId: 'gitkey', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.ini', playbook: 'apache.yml'                   }
                               
                              }
         stage('Declarative pipeline') {
