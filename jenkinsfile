@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+            
+            stage('ansible') {
+            steps {
+                echo 'running ansible playbook from jenkinsfile'
+                ansiblePlaybook credentialsId: 'gitkey', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inv.yml', playbook: 'apache.yml'
+            }
+      
+       }
+        stage('Declarative pipeline') {
+            steps {
+                echo "This is my first declarative pipeline syntax"
+            }
+        }
+    }
+}
