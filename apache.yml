@@ -1,6 +1,5 @@
 ---
- - hosts: webservers
-  # become: True
+ - hosts: 192.168.137.129
    remote_user: harry
    tasks:
      - name: Install pckgs
@@ -8,10 +7,6 @@
           name: "vim" 
           state: :present"
           
-  #   - name: start apache
-  #     service:
-   #       name: apache
-    #      state: restart
      - name: run date command
           command: uptime
           register: dateval
