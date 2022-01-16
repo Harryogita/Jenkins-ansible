@@ -10,7 +10,7 @@
           var: dateval
 
      - name: Install vim on ubuntu remote host
-       apt: name=vim  state=latest
+       apt: name=figlet  state=latest
        register: vimvar
      - debug:
           var: vimvar
