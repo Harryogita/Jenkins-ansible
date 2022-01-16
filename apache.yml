@@ -6,5 +6,11 @@
        apt:
           name: "vim" 
           state: :present"
+     - name: run date command
+       command: uptime
+       register: dateval
+     - debug:
+          var: dateval
+
           
     
